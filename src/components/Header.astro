@@ -1,0 +1,99 @@
+---
+import HeaderButton from "./HeaderButton.astro";
+---
+
+<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+  <div class="mx-auto text-center mb-8 lg:mb-16">
+    <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+      Frase del dia
+    </h2>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+      cards con distintas frases del dia
+    </p>
+  </div>
+  <div class="menu">
+    <HeaderButton titleButon="Naturaleza">
+      <svg
+        slot="before"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M2 9a10 10 0 1 0 20 0"></path>
+        <path d="M12 19a10 10 0 0 1 10 -10"></path>
+        <path d="M2 9a10 10 0 0 1 10 10"></path>
+        <path d="M12 4a9.7 9.7 0 0 1 2.99 7.5"></path>
+        <path d="M9.01 11.5a9.7 9.7 0 0 1 2.99 -7.5"></path>
+      </svg>
+    </HeaderButton>
+    <HeaderButton titleButon="Abstracto">
+      <svg
+        slot="before"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M9.974 21h8.052a.975 .975 0 0 0 .81 -1.517l-4.025 -6.048a.973 .973 0 0 0 -1.622 0l-4.025 6.048a.977 .977 0 0 0 .81 1.517z"
+        ></path>
+        <path
+          d="M4.98 16h14.04c.542 0 .98 -.443 .98 -.989a1 1 0 0 0 -.156 -.534l-7.02 -11.023a.974 .974 0 0 0 -1.648 0l-7.02 11.023a1 1 0 0 0 .294 1.366a.973 .973 0 0 0 .53 .157z"
+        ></path>
+      </svg></HeaderButton
+    >
+    <HeaderButton titleButon="Colores">
+      <svg
+        slot = "before"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M13.58 13.79c.27 .68 .42 1.43 .42 2.21c0 1.77 -.77 3.37 -2 4.46a5.93 5.93 0 0 1 -4 1.54c-3.31 0 -6 -2.69 -6 -6c0 -2.76 1.88 -5.1 4.42 -5.79"
+        ></path>
+        <path
+          d="M17.58 10.21c2.54 .69 4.42 3.03 4.42 5.79c0 3.31 -2.69 6 -6 6a5.93 5.93 0 0 1 -4 -1.54"
+        ></path>
+        <path d="M12 8m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0"></path>
+      </svg>
+    </HeaderButton>
+  </div>
+</header>
+<style>
+  .menu {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+ 
+</style>

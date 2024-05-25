@@ -1,0 +1,26 @@
+---
+const { titleButon } = Astro.props;
+---
+
+<a class="btnLink" href="/">
+  <slot name="before" />
+  {titleButon}
+</a>
+
+<style>
+  .btnLink {
+    width: 9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:3px;
+    border: solid rgb(162, 158, 158);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+  }
+  .btnLink:hover {
+    transform: scale(1.1); /* Escala al 110% en hover */
+  }
+
+
+</style>
