@@ -1,34 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Cards.">
-	<main>
-		<Header/>
-		<div class="contCards">
-		<Card titleCard="frase #1"/>
-		<Card titleCard="frase #2"/>
-		<Card titleCard="frase #3"/>
-		<Card titleCard="frase #4"/>
-		<div/>
-	</main>
+  <main>
+    <Header />
+    <div class="contCards">
+      <Card img="frase #1" />
+      <Card img="frase #2" />
+      <Card img="frase #3" />
+      <Card img="frase #4" />
+      <div></div>
+    </div>
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .contCards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+      .contCards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+      }
+    }
+  </style>
 </Layout>
-
-<style>
-	main {	
-		margin: auto;
-		padding: 1rem;
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-	.contCards{
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 0.5rem;
-	}
-
-</style>
