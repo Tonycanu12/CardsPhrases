@@ -1,1 +1,29 @@
-<p>hola natu</p>
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Natu">
+  
+  <div class="contCards">
+  <Card tipo = "abstract"/>
+ 
+</div>
+  <style>
+      .contCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    .contCards {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0.5rem;
+    }
+  }
+  </style>
+</Layout>

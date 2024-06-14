@@ -1,53 +1,107 @@
 ---
-const img = Astro.props.img;
-const frase = Astro.props.frase;
+// const img = Astro.props.img;
+// const frase = Astro.props.frase;
+const tipoImg = Astro.props.tipo;
+import Photo from "../components/PhotoPexels.js";
+import Frase from "../components/Quotes.js";
+const frase ="frase chida es la mera tos con papas para que no se desborde el contenido del parrafo";
+const photos = await Photo("girls", 20);
+const quotes = await Frase("movies");
+console.log(quotes)
 ---
 
-<div class="card">
-  <div class="contIMG">
-    <img class="img"
-      src={img}/><img />
+{
+  photos.length > 0 ? (
+    photos.map((photo: { src: { large: string } }) => (
+      //<Card img={photo.src.large} frase={frase} />
+      <div class="card">
+        <div class="contIMG">
+          <img class="img" src={photo.src.large} /><img />
+          <div class="text-overlay">{quotes[0].quote}</div>
+          <button type="button" class="btnDowd">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#ffff"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 8h.01" />
+              <path d="M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5" />
+              <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4" />
+              <path d="M14 14l1 -1c.653 -.629 1.413 -.815 2.13 -.559" />
+              <path d="M19 16v6" />
+              <path d="M22 19l-3 3l-3 -3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    ))
+  ) : (
+    <p>sin fotografias</p>
+  )
+}
+<!-- <div class="card">
+    <div class="contIMG">
+      <img class="img" src={img} /><img />
       <div class="text-overlay">{frase}</div>
-  </div>
-</div>
+    </div>
+  </div> -->
 
 <style>
   .card {
     border: solid;
     display: flex;
     flex-direction: column;
-    background: #FFFF;
+    background: #ffff;
     border-style: none;
     border-radius: 0.5rem;
     padding: 2px;
     height: 30vh;
   }
-  /* .card:hover{
-    transform:scale(1.1);
-  } */
-  .contIMG{
-    position: relative;
-    overflow: hidden;
-
+  .card:hover {
+    transform: scale(1.3);
+    z-index: 100;
+    box-shadow: rgba(255, 255, 255, 0.859) 0px 0px 50px 10px;
   }
 
-  .img{
+
+  .contIMG {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img {
     width: 100%;
     height: 100vh;
     max-height: 100%;
     border-radius: 0.5rem;
     object-fit: cover;
+    opacity: 90%;
   }
-  .text-overlay{
+
+  .btnDowd {
     position: absolute;
-    top:50%;
+    top: 80%;
+    right: 10%;
+    transform: translate(30%, 20%);
+    background-color: rgba(22, 21, 21, 0.748);
+    padding: 0.4rem;
+    border-radius: 50%;
+  }
+  .text-overlay {
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:  rgba(143, 143, 143, 0.028);
+    background-color: rgba(26, 25, 25, 0.378);
     text-align: center;
-    color:#ffff;
+    color: #ffff;
     width: calc(100% - 5px);
     box-sizing: border-box;
   }
-
 </style>

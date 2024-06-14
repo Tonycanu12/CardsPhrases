@@ -1,0 +1,35 @@
+---
+
+---
+<button act-btnButon>HOLA</button>
+<button act-btnButon2>HOLA</button>
+
+<script>
+  const button = document.querySelectorAll("[act-btnButon]");
+  const button2 = document.querySelectorAll("[act-btnButon2]");
+
+  
+
+  button.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        console.log("hola evento index");
+        
+        const contCards  =  document.querySelectorAll(".contCards");
+        contCards.forEach((card) => {
+          card.innerHTML = `hola`;
+      });
+      });
+    });
+
+//   function cards(){
+//     card.forEach((card) => {
+//         card.innerHTML = `<h1>Hola fui agredado por un boton</h1>`;
+//     })
+//   }
+</script>
+
+<style>
+  .select {
+    width: 100px;
+  }
+</style>

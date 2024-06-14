@@ -2,8 +2,8 @@
 import HeaderButton from "./HeaderButton.astro";
 ---
 
-<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
-  <div class="mx-auto text-center mb-8 lg:mb-16">
+<header class="">
+  <div class="mx-auto text-center  ">
     <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
       Phrase of the day
     </h2>
@@ -12,7 +12,7 @@ import HeaderButton from "./HeaderButton.astro";
     </p>
   </div>
   <div class="menu">
-    <HeaderButton titleButon="Naturaleza">
+    <HeaderButton titleButon="Nature" page ="/">
       <svg
         slot="before"
         width="44"
@@ -32,7 +32,7 @@ import HeaderButton from "./HeaderButton.astro";
         <path d="M9.01 11.5a9.7 9.7 0 0 1 2.99 -7.5"></path>
       </svg>
     </HeaderButton>
-    <HeaderButton titleButon="Abstracto">
+    <HeaderButton titleButon="Abstract" page ="/natu">
       <svg
         slot="before"
         width="44"
@@ -53,7 +53,7 @@ import HeaderButton from "./HeaderButton.astro";
         ></path>
       </svg></HeaderButton
     >
-    <HeaderButton titleButon="Colores">
+    <HeaderButton titleButon="Colors">
       <svg
         slot = "before"
         width="44"
@@ -78,6 +78,20 @@ import HeaderButton from "./HeaderButton.astro";
   </div>
 </header>
 <style>
+
+  header{
+    color:aliceblue;
+    position: fixed;
+    z-index: 1000;
+    background: #13151ae8 ;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    backdrop-filter:blur(10px);
+    box-shadow: 5px 19px 15px #13151ae8;
+  }
   .menu {
     height: 100%;
     display: flex;
@@ -85,6 +99,7 @@ import HeaderButton from "./HeaderButton.astro";
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
   }
 
   @media screen and (max-width: 600px) {

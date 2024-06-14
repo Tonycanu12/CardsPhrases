@@ -1,12 +1,12 @@
 ---
-const { titleButon } = Astro.props;
+const { titleButon,page } = Astro.props;
 ---
-
-<a class="btnLink" href="/src/pages/natu.astro">
+<div class="contbut">
+<a class="btnLink" href={page}>
   <slot name="before" />
   {titleButon}
 </a>
-
+</div>
 <style>
   .btnLink {
     width: 9rem;
@@ -17,10 +17,16 @@ const { titleButon } = Astro.props;
     border: solid rgb(162, 158, 158);
     border-radius: 0.5rem;
     padding: 0.3rem;
-  }
+    background:#121419 ;
+    }
   .btnLink:hover {
     transform: scale(1.1); /* Escala al 110% en hover */
   }
+  .contbut{
+    padding-top: 1rem;
 
+    
+  }
+ 
 
 </style>

@@ -1,0 +1,43 @@
+<comp-perso>
+    
+<form class="max-w-sm mx-auto">
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+    <select id="categorias" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option selected>Elige una categoria</option>
+      <option value="natu">Nature</option>
+      <option value="dogs">dogs</option>
+      <option value="cats">cats</option>
+      <option value="abstract">abstract</option>
+    </select>
+  </form>
+  
+    <button aria-label = "Heart" data-valor="holo esto es un dato del button">😊hola</button> x <span>0</span>
+</comp-perso>
+
+<!--comportamiento del elemento -->
+<script>
+    class CompPerso extends HTMLElement{
+        constructor(){
+            super();
+            //logica
+            let count = 0;
+
+            const button = this.querySelector('button');
+            const span = this.querySelector('span');
+            const select  = this.querySelector('select')
+            if(button){
+            button.addEventListener('click', () =>{
+                count++;
+                if(span){
+                    span.textContent = count.toString();
+                }
+                let dataS = select?.value;
+                alert(dataS + "💘")
+
+                        
+            });}
+        }
+    }
+
+    customElements.define('comp-perso', CompPerso);
+</script>
